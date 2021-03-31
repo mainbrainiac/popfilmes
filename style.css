@@ -1,0 +1,27 @@
+body {
+    background-color: #f3f3f3;
+}
+
+.nav-extended {
+    background-image: url(./images/background.png);
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+
+.nav-header h1 {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+
+    text-shadow: 2px 2px 15px #000000;
+}
+
+.nav-wrapper ul li {
+    font-weight: bold;
+    margin: 0 .5rem;
+}
+
+.nav-content li a.active,
+.nav-wrapper ul li {
+    border-bottom: solid 2px white;
+}
