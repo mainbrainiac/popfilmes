@@ -3,16 +3,21 @@
 $route = $_SERVER["REQUEST_URI"];
 $method = $_SERVER["REQUEST_METHOD"];
 
+require "./Controllers/MoviesController.php";
+
 switch($route) {
     case "/":
-        require "./gallery.php";
+        require "Views/gallery.php";
         break;
     case "/novo":
-        if($method == "GET") require "./register.php";
-        if($method == "POST") require "./insertMovies.php";
+        if($method == "GET") require "Views/register.php";
+        if($method == "POST") {
+            $controller = new MoviesController();
+            $controller -> save($_REQUEST);
+        }
         break;
     default:
-        require "404.php";
+        require "Views/404.php";
 }
 
 ?>
