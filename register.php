@@ -1,7 +1,7 @@
 <?php include "header.php" ?>
 
 <body>
-    <nav class="nav-extended red lighten-3">
+    <nav class="nav-extended grey lighten-1">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right">
                 <li><a href="/">Galeria</a></li>

@@ -12,7 +12,7 @@ $movies = $moviesRepository -> listAll();
 ?>
 
 <body>
-    <nav class="nav-extended red lighten-3">
+    <nav class="nav-extended grey lighten-1">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right">
                 <li><a href="/">Galeria</a></li>
@@ -23,7 +23,7 @@ $movies = $moviesRepository -> listAll();
             <h1>POP FILMES</h1>
         </div>
         <div class="nav-content">
-            <ul class="tabs tabs-transparent red darken-1">
+            <ul class="tabs tabs-transparent grey darken-1">
                 <li class="tab"><a class="active" href="#test1">Todos</a></li>
                 <li class="tab"><a href="#test2">Assistidos</a></li>
                 <li class="tab"><a href="#test3">Favoritos</a></li>
