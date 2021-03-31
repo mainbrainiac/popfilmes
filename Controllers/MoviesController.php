@@ -13,12 +13,15 @@ class MoviesController{
 
     public function save($request){
         $moviesRepository = new MoviesRepositoryPDO();
-        $movie = new Movie();
+        $movie = (object) $request;
 
-        $movie -> title    = $request["title"];
-        $movie -> synopsis = $request["synopsis"];
-        $movie -> note     = $request["note"];
-        $movie -> poster   = $request["poster"];
+        $upload = $this -> savePoster($_FILES);
+
+        if(gettype($upload) == "string"){
+            $movie -> poster = $upload;
+        }
+
+        $_FILES["poster_file"];
 
         if($moviesRepository->save($movie)) {
             $_SESSION["msg"] = "Filme inserido com sucesso!";
@@ -28,6 +31,18 @@ class MoviesController{
 
         header("Location: /");
     } 
+
+    private function savePoster($file){
+        $posterDir = "images/posters/";
+        $posterPath = $posterDir . basename($file["poster_file"]["name"]);
+        $posterTmp = $file["poster_file"]["tmp_name"];
+
+        if (move_uploaded_file($posterTmp, $posterPath)) {
+            return $posterPath;
+        } else {
+            return false;
+        };
+    }
 }
 
 

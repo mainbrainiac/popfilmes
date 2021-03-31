@@ -14,7 +14,7 @@
     </nav>
 
     <div class="row">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <div class="col s6 offset-s3">
                 <div class="card">
                     <div class="card-content">
@@ -50,7 +50,7 @@
                         <div class="file-field input-field">
                             <div class="btn red lighten-2 black-text">
                                 <span>Capa</span>
-                                <input type="file">
+                                <input type="file" name="poster_file">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate " name="poster" type="text" required>

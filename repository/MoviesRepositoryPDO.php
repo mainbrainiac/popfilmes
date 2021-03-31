@@ -18,11 +18,11 @@ class MoviesRepositoryPDO {
         while($movie = $movies -> fetchObject()) {
             array_push($moviesList, $movie);
         }
-        
+
         return $moviesList;
     }
     
-    public function save(Movie $movie):bool {
+    public function save($movie):bool {
         $query = "INSERT INTO movies (title, poster, synopsis, note)
         VALUES (:title, :poster, :synopsis, :note)";
 

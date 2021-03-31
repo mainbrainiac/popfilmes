@@ -1,7 +1,6 @@
 <?php include "header.php" ?>
 
 <?php
-session_start();
 
 require "./Utils/Message.php";
 
