@@ -5,7 +5,7 @@
 require "./Utils/Message.php";
 
 $controller = new MoviesController();
-$movies = $controller -> index();
+$movies = $controller->index();
 ?>
 
 <body>
@@ -29,31 +29,28 @@ $movies = $controller -> index();
     </nav>
 
     <div class="container">
-        <?php foreach($movies as $movie): ?>
+        <?php foreach ($movies as $movie) : ?>
             <div class="row">
                 <div class="col s12 m6 l3">
                     <div class="card hoverable">
                         <div class="card-image">
-                            <img src="<?=  $movie->poster ?>">
-                            <a class="btn-floating halfway-fab waves-effect waves-light red">
+                            <img src="<?= $movie->poster ?>">
+                            <button class="btn-floating halfway-fab waves-effect waves-light red">
                                 <i class="material-icons">favorite_border</i>
-                            </a>
+                            </button>
                         </div>
                         <div class="card-content">
                             <p class="valign-wrapper">
-                                <i class="material-icons amber-text">star</i> <?=  $movie->note ?>
+                                <i class="material-icons amber-text">star</i> <?= $movie->note ?>
                             </p>
-                            <span class="card-title"><?=  $movie->title ?></span>
-                            <p><?=  $movie->synopsis ?></p>
+                            <span class="card-title"><?= $movie->title ?></span>
+                            <p><?= $movie->synopsis ?></p>
                         </div>
                     </div>
                 </div>
-        <?php endforeach ?>
-    </div>
+            <?php endforeach ?>
+            </div>
 
-    <?= Message::show(); ?>
-    
+            <?= Message::show(); ?>
+
 </body>
-
-
-
