@@ -35,7 +35,7 @@ $movies = $controller->index();
                     <div class="card hoverable">
                         <div class="card-image">
                             <img src="<?= $movie->poster ?>">
-                            <button class="btn-fav btn-floating halfway-fab waves-effect waves-light red">
+                            <button class="btn-fav btn-floating halfway-fab waves-effect waves-light red" data-id="<?= $movie->id ?>">
                                 <i class="material-icons">
                                 <?= ($movie->favorites)?"favorite": "favorite_border" ?>
                                 </i>

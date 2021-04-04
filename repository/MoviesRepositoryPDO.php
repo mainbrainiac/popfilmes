@@ -39,7 +39,7 @@ class MoviesRepositoryPDO
     }
 
     public function favorite(int $id) {
-        $query = "UPDATE movies SET favorites = 1 WHERE id=:id";
+        $query = "UPDATE movies SET favorites = NOT favorites WHERE id=:id";
 
         $stmt = $this->connection->prepare($query);
 
