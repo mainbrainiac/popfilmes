@@ -43,8 +43,11 @@ class MoviesController{
             return false;
         };
     }
+
+    public function favorite(int $id) {
+        $moviesRepository = new MoviesRepositoryPDO();
+        $result = ['success' => $moviesRepository -> favorite($id)];
+        header('Content-type: application/json');
+        echo json_encode($result);
+    }
 }
-
-
-
-?>  

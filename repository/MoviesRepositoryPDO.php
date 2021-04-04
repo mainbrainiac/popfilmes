@@ -12,8 +12,7 @@ class MoviesRepositoryPDO
         $this->connection = Database::connection();
     }
 
-    public function listAll(): array
-    {
+    public function listAll(): array {
         $moviesList = array();
         $sql = "SELECT * FROM movies";
         $movies = $this->connection->query($sql);
@@ -25,8 +24,7 @@ class MoviesRepositoryPDO
         return $moviesList;
     }
 
-    public function save($movie): bool
-    {
+    public function save($movie): bool {
         $query = "INSERT INTO movies (title, poster, synopsis, note)
         VALUES (:title, :poster, :synopsis, :note)";
 
@@ -38,5 +36,19 @@ class MoviesRepositoryPDO
         $stmt->bindValue(':poster', $movie->poster, PDO::PARAM_STR);
 
         return $stmt->execute();
+    }
+
+    public function favorite(int $id) {
+        $query = "UPDATE movies SET favorites = 1 WHERE id=:id";
+
+        $stmt = $this->connection->prepare($query);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+
+        if($stmt->execute()) {
+            return "ok";
+        } else {
+            return "err";
+        }
     }
 }
