@@ -33,7 +33,7 @@ class MoviesController{
     } 
 
     private function savePoster($file){
-        $posterDir = "images/posters/";
+        $posterDir = "Assets/images/posters/";
         $posterPath = $posterDir . basename($file["poster_file"]["name"]);
         $posterTmp = $file["poster_file"]["tmp_name"];
 
