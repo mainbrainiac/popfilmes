@@ -45,13 +45,20 @@ $movies = $controller->index();
                             <p class="valign-wrapper">
                                 <i class="material-icons amber-text">star</i> <?= $movie->note ?>
                             </p>
-                            <span class="card-title"><?= $movie->title ?></span>
-                            <p><?= $movie->synopsis ?></p>
+                            <span class="card-title activator truncate">
+                                <?= $movie->title ?>
+                            </span>
+                            </div>
+                            <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><?= $movie->title ?><i class="material-icons right">close</i></span>
+                            <p><?= substr($movie->synopsis, 0, 600) . "..." ?></p>
+                            <button class="waves-effect waves-light btn-small right red accent-2 btn-delete" data-id="<?= $movie->id ?>"><i class="material-icons">delete</i></button>
                         </div>
                     </div>
                 </div>
             <?php endforeach ?>
-            </div>
+        </div>
+    </div>
 
             <?= Message::show(); ?>
 

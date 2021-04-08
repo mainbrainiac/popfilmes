@@ -25,3 +25,8 @@ body {
 .nav-wrapper ul li {
     border-bottom: solid 2px white;
 }
+
+.fadeOut{
+    opacity: 0;
+    transition: 1s;
+}

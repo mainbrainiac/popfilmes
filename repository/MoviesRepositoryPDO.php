@@ -51,4 +51,20 @@ class MoviesRepositoryPDO
             return "err";
         }
     }
+
+    public function delete(int $id) {
+        $query = "DELETE FROM movies WHERE id=:id";
+
+        $stmt = $this->connection->prepare($query);
+
+        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+
+        if($stmt->execute()) {
+            return "ok";
+        } else {
+            return "err";
+        }
+    }
+
+    
 }

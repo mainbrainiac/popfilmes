@@ -30,4 +30,15 @@ if(substr($route, 0, strlen($favoriteRoute)) === $favoriteRoute) {
     exit();
 }
 
+if(substr($route, 0, strlen("/filmes")) === "/filmes") {
+    if($method == "GET") require "Views/gallery.php";
+    if($method == "DELETE") {
+        $controller = new MoviesController();
+        $controller -> delete(basename($route));
+    }
+
+
+    exit();
+}
+
 require "Views/404.php";
